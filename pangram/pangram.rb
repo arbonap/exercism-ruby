@@ -1,7 +1,10 @@
 class Pangram
-  ALPHABETO = ("a".."z").to_a
   def self.is_pangram? frase
-    frase.gsub(/[^a-z]/i, "").downcase.chars.sort.uniq == ALPHABETO
+    alphabeto = ("a".."z").to_a
+    frase.downcase.chars.each do |char|
+      alphabeto.delete(char)
+    end
+    alphabeto.empty?
   end
 end
 module BookKeeping

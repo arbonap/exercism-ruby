@@ -11,7 +11,8 @@ class ComplementTest < Minitest::Test
 
     assert_equal 'G', Complement.of_dna('C')
   end
-
+# I use 'self.method_name during this insance because in the tests we're
+# ...not newing up a new class instance, but rather it's a legit Class method.
   def test_rna_complement_of_guanine_is_cytosine
 
     assert_equal 'C', Complement.of_dna('G')

@@ -4,17 +4,18 @@ class Squares
   end
 
   def difference
-    difference ||= square_of_sum - sum_of_squares
+    @difference ||= square_of_sum - sum_of_squares
   end
 
   def sum_of_squares
-      (0..@num).map{|x| x ** 2 }.reduce(:+)
+      squares = (0..@num).map{|x| x ** 2 }
+      squares.reduce(:+)
   end
 
   def square_of_sum
-      (0..@num).reduce(:+)** 2
+      sum = (0..@num).reduce(:+)
+      sum ** 2
   end
-
 end
 
 module BookKeeping

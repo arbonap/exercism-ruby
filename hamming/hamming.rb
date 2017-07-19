@@ -1,22 +1,19 @@
 
 class Hamming
-    def self.compute(strand1, strand2)
-        raise ArgumentError if strand1.length != strand2.length
 
-        differences = 0
+  def self.compute(a, b)
 
-        length = strand1.length
+    raise ArgumentError if a.length != b.length
+    
+    a = a.chars
+    b = b.chars
 
-        length.times do |index|
-            if strand1[index] != strand2[index]
-                differences += 1
-            end
 
-        end
-        differences
-    end
+    a.zip(b).count { |x, y| x != y}
+
+  end
 end
 
 module BookKeeping
-    VERSION = 3
+  VERSION = 3
 end

@@ -11,7 +11,7 @@ rescue LoadError => e
   puts DATA.read
   exit 1
 end
-
+st
 # Test data version:
 # deb225e Implement canonical dataset for scrabble-score problem (#255)
 

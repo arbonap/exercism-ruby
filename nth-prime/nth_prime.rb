@@ -4,10 +4,9 @@ class Prime
     raise ArgumentError if input == 0
     output = []
 
-    (2..10002).map do |num|
+    (3..2000).map do |num|
       output.push(num) if self.prime?(num)
     end
-    puts output[input - 1]
     output[input - 1]
   end
 

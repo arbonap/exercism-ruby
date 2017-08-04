@@ -10,6 +10,7 @@ class Prime
     output[input - 1]
   end
 
+  private
   def self.prime?(num)
     return false if num < 2
     (2...num).map do |i|

@@ -11,10 +11,7 @@ class Grains
   end
 
   def self.total
-    chessboard = []
-    (1..64).map do |i|
-            chessboard.push(square(i))
-    end
+    chessboard = (1..64).map { |i| square(i) }
     chessboard.reduce(&:+)
   end
 end

@@ -1,12 +1,18 @@
 class Bob
 
   def self.hey txt
+    return "Sure." if non_letters_with_question?(txt)
     return 'Whoa, chill out!' if all_upcase?(txt) unless all_nums?(txt)
     return "Sure." if txt.chars.last == "?"
     "Whatever."
   end
 
   private
+
+  def self.non_letters_with_question? txt
+    txt.split(/\W+/).length == 0  && txt.chars.last == "?"
+  end
+
   def self.all_upcase? txt
     txt == txt.upcase
   end

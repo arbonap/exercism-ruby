@@ -115,7 +115,6 @@ class BobTest < Minitest::Test
   end
 
   def test_ending_with_whitespace
-    skip
     remark = "Okay if like my  spacebar  quite a bit?   "
     assert_equal 'Sure.', Bob.hey(remark), %q{Bob hears "Okay if like my  spacebar  quite a bit?   ", and..}
   end
@@ -126,7 +125,6 @@ class BobTest < Minitest::Test
   end
 
   def test_non_question_ending_with_whitespace
-    skip
     remark = "This is a statement ending with whitespace      "
     assert_equal 'Whatever.', Bob.hey(remark), %q{Bob hears "This is a statement ending with whitespace      ", and..}
   end
@@ -149,7 +147,6 @@ class BobTest < Minitest::Test
   # http://ruby-doc.org/docs/ruby-doc-bundle/UsersGuide/rg/constants.html
 
   def test_bookkeeping
-    skip
     assert_equal 1, BookKeeping::VERSION
   end
 end

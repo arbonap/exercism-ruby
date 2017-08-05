@@ -3,7 +3,7 @@ class Bob
   def self.hey txt
     return "Sure." if non_letters_with_question?(txt)
     return 'Whoa, chill out!' if all_upcase?(txt) unless all_nums?(txt)
-    return "Sure." if txt.chars.last == "?"
+    return "Sure." if txt.strip.chars.last == "?"
     return "Fine. Be that way!" if blank?(txt)
     "Whatever."
   end
@@ -25,4 +25,8 @@ class Bob
   def self.all_nums? txt
     txt.split.all? {|i| i.to_i != 0 }
   end
+end
+
+module BookKeeping
+  VERSION = 1
 end

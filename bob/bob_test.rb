@@ -85,7 +85,6 @@ class BobTest < Minitest::Test
   end
 
   def test_prattling_on
-    skip
     remark = "Wait! Hang on. Are you going to be OK?"
     assert_equal 'Sure.', Bob.hey(remark), %q{Bob hears "Wait! Hang on. Are you going to be OK?", and..}
   end

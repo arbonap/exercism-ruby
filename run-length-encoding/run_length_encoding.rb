@@ -4,6 +4,13 @@ class RunLengthEncoding
   end
 
   def self.decode(input)
-    # input.chars.chunk{|i| i}.map{|kind, array| [kind, array.length]}.map{|char, count| char * count}.join
+    input.scan(/[0-9]*[^0-9]/).map do |char|
+      char.length > 1 ? char[-1] * char.to_i : char
+    end.join
   end
+end
+
+
+module BookKeeping
+  VERSION = 3
 end

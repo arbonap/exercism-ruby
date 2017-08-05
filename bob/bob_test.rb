@@ -110,7 +110,6 @@ class BobTest < Minitest::Test
   end
 
   def test_starting_with_whitespace
-    skip
     remark = "         hmmmmmmm..."
     assert_equal 'Whatever.', Bob.hey(remark), %q{Bob hears "         hmmmmmmm...", and..}
   end

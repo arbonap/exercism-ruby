@@ -90,13 +90,11 @@ class BobTest < Minitest::Test
   end
 
   def test_silence
-    skip
     remark = ""
     assert_equal 'Fine. Be that way!', Bob.hey(remark), %q{Bob hears "", and..}
   end
 
   def test_prolonged_silence
-    skip
     remark = "          "
     assert_equal 'Fine. Be that way!', Bob.hey(remark), %q{Bob hears "          ", and..}
   end

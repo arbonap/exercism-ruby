@@ -8,8 +8,8 @@ class SumOfMultiples
 
   def to(num)
     # return 0 if num < multiple_one || num < multiple_two || num < multiple_three
-    one = (1..num).select{ |i| i % multiple_one == 0 }.reduce(&:+)
-    two = (1..num).select{ |i| i % multiple_two == 0}.reduce(&:+)
+    one = (1...num).select{ |i| i % multiple_one == 0 }.reduce(&:+)
+    two = (1...num).select{ |i| i % multiple_two == 0}.reduce(&:+)
     # three = (1..num).select{ |i| i % multiple_three == 0}.reduce(&:+)
     one.to_i + two.to_i
   end

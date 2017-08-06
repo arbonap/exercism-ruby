@@ -14,6 +14,11 @@ class Array
   end
 end
 
+module BookKeeping
+  VERSION = 1 # Where the version number matches the one in the test.
+end
+
+
 # module Accumulate
 #   def accumulate( &block )
 #     # Doesn't use map or collect or etc.

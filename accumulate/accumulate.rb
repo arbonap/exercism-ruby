@@ -6,7 +6,6 @@ class Array
       if !block_given?
         output.push(item ** 2)
       else
-        # require 'pry'; binding.pry
         output << block.call(item)
       end
     end

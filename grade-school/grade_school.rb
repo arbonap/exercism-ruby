@@ -16,16 +16,10 @@ class School
   end
 
   def students_by_grade
-    grade_dict = {}
-    thing = school_db.map do |key, value|
-                        grade_dict[:grade] = key
-                        grade_dict[:students] = value
-                        grade_dict[:students].sort!
-    end
-    # binding.pry
-    grade_dict.empty? ? [] : [grade_dict]
+    p school_db.map{|k, v| {:grade => k, :students => v.sort!}}
   end
-
+# grade_dict = {}
+# school_db.map{|k, v| p grade_dict[k] = v.sort! }
   # def sort
   #   school_db.sort.each_with_object({}) do |grade, student, sorted|
   #
@@ -35,3 +29,14 @@ class School
   # require 'pry'; binding.pry
 
 end
+
+
+# # school_db = {3=>["Deemee", "Eeemee"],
+#  1=>["Effmee", "Geemee"],
+#  2=>["Aimee", "Beemee", "Ceemee"]}
+
+
+# [
+#   {:grade=>2, :students=>["Aimee", "Beemee", "Ceemee"]},
+#   {:grade=>3, :students=>["Deemee", "Eeemee"]}
+# ]

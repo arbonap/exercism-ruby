@@ -1,3 +1,4 @@
+require 'pry'
 class School
 
   attr_reader :school_db
@@ -12,6 +13,17 @@ class School
 
   def students grade
     school_db[grade].sort #sort this list
+  end
+
+  def students_by_grade
+    grade_dict = {}
+    thing = school_db.map do |key, value|
+                        grade_dict[:grade] = key
+                        grade_dict[:students] = value
+                        grade_dict[:students].sort!
+    end
+    # binding.pry
+    grade_dict.empty? ? [] : [grade_dict]
   end
 
   # def sort

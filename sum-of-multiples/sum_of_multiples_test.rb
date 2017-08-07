@@ -17,17 +17,14 @@ class SumOfMultiplesTest < Minitest::Test
   end
 
   def test_multiples_of_3_or_5_up_to_100
-    skip
     assert_equal 2_318, SumOfMultiples.new(3, 5).to(100)
   end
 
   def test_multiples_of_3_or_5_up_to_1000
-    skip
     assert_equal 233_168, SumOfMultiples.new(3, 5).to(1000)
   end
 
   def test_multiples_of_7_13_or_17_up_to_20
-    skip
     assert_equal 51, SumOfMultiples.new(7, 13, 17).to(20)
   end
 

@@ -8,9 +8,21 @@ class SumOfMultiples
 
   def to(num)
     # return 0 if num < multiple_one || num < multiple_two || num < multiple_three
-    one = (1...num).select{ |i| i % multiple_one == 0 }.reduce(&:+)
-    two = (1...num).select{ |i| i % multiple_two == 0}.reduce(&:+)
-    # three = (1..num).select{ |i| i % multiple_three == 0}.reduce(&:+)
-    one.to_i + two.to_i
+    one = (1...num).select{ |i| i % multiple_one == 0 }
+    # require 'pry'; binding.pry
+    two = (1...num).select{ |i| i % multiple_two == 0}
+
+    three = (1...num).select{ |i| i % multiple_three == 0} unless multiple_three.nil?
+
+    unless one.empty? && two.empty?
+      # require 'pry'; binding.pry;
+      if multiple_three.nil?
+        one.to_a.push(two).flatten.compact.uniq.reduce(&:+)
+      else
+        one.to_a.push(two).push(three).flatten.compact.uniq.reduce(&:+)
+      end
+    else
+      0
+    end
   end
 end

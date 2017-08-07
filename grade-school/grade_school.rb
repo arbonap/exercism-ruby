@@ -16,7 +16,7 @@ class School
   end
 
   def students_by_grade
-    p school_db.map{|k, v| {:grade => k, :students => v.sort!}}
+    p school_db.map{|k, v| {:grade => k, :students => v.sort!}}.sort_by {|k, v| k[:grade]}
   end
 # grade_dict = {}
 # school_db.map{|k, v| p grade_dict[k] = v.sort! }

@@ -1,22 +1,23 @@
-require 'pry'
 class School
 
   attr_reader :school_db
 
   def initialize
-    @school_db = Hash.new { [] } #default value is array
+    @school_db = Hash.new { [] }
   end
 
-  def add(name, grade)
+  def add name, grade
     school_db[grade] <<= name
   end
 
   def students grade
-    school_db[grade].sort #sort this list
+    school_db[grade].sort
   end
 
   def students_by_grade
-    school_db.map{|k, v| {:grade => k, :students => v.sort!}}.sort_by! {|k, v| k[:grade]}
+    school_db.map do |k, v|
+                     {:grade => k, :students => v.sort!}
+                  end.sort_by! {|k, v| k[:grade]}
   end
 
 end

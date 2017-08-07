@@ -7,15 +7,15 @@ class SumOfMultiples
   end
 
   def to(num)
-    # return 0 if num < multiple_one || num < multiple_two || num < multiple_three
+    multiples = [multiple_one, multiple_two, multiple_three]
+    return 0 if multiples.all? {|i| i.nil? }
     one = (1...num).select{ |i| i % multiple_one == 0 }
-    # require 'pry'; binding.pry
+    return one.uniq.reduce(&:+) if multiple_two.nil? && multiple_three.nil?
+
     two = (1...num).select{ |i| i % multiple_two == 0}
 
     three = (1...num).select{ |i| i % multiple_three == 0} unless multiple_three.nil?
-
     unless one.empty? && two.empty?
-      # require 'pry'; binding.pry;
       if multiple_three.nil?
         one.to_a.push(two).flatten.compact.uniq.reduce(&:+)
       else
@@ -25,4 +25,8 @@ class SumOfMultiples
       0
     end
   end
+end
+
+module BookKeeping
+  VERSION = 1
 end

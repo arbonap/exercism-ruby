@@ -6,19 +6,19 @@ class Series
   end
 
   def slices num
-    raise ArgumentError, "nope" if num > str.length
+    raise ArgumentError, "That number is too long! :'(" if num > str.length
     str_length = str.length - 1
-    start_index = 0
-    end_index = num
+    start_index = 0 #start of slice
+    end_index = num #end of slice
 
-    output = []
+    slice_combos = []
 
     until str_length <= -1
-      output.push(str[start_index...end_index])
+      slice_combos.push(str[start_index...end_index])
       str_length -= 1
       start_index += 1
       end_index += 1
     end
-    output.select{ |char| char.length == num }
+    slice_combos.reject{ |char| char.length != num } #reject any slices that aren't the correct length
   end
 end

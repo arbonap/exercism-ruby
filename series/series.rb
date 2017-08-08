@@ -1,4 +1,3 @@
-require 'pry'
 class Series
   attr_accessor :str
 
@@ -7,6 +6,7 @@ class Series
   end
 
   def slices num
+    raise ArgumentError, "nope" if num > str.length
     str_length = str.length - 1
     start_index = 0
     end_index = num

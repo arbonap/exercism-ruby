@@ -1,30 +1,26 @@
 require 'minitest/autorun'
 require_relative 'phone_number'
+require 'minitest/pride'
 
 # Common test data version: 1.2.0 39cba0d
 class PhoneNumberTest < Minitest::Test
   def test_cleans_the_number
-    # skip
     assert_equal "2234567890", PhoneNumber.clean("(223) 456-7890")
   end
 
   def test_cleans_numbers_with_dots
-    skip
     assert_equal "2234567890", PhoneNumber.clean("223.456.7890")
   end
 
   def test_cleans_numbers_with_multiple_spaces
-    skip
     assert_equal "2234567890", PhoneNumber.clean("223 456   7890   ")
   end
 
   def test_invalid_when_9_digits
-    skip
     assert_nil PhoneNumber.clean("123456789")
   end
 
   def test_invalid_when_11_digits_does_not_start_with_a_1
-    skip
     assert_nil PhoneNumber.clean("22234567890")
   end
 
